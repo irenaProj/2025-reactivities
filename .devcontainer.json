@@ -1,7 +1,2 @@
 {
-  "image": "mcr.microsoft.com",
-  "features": {
-    "ghcr.io/devcontainers/features/node:1": {}
-  },
-  "postCreateCommand": "apt-get update && apt-get install -y libnss3-tools curl && curl -o mkcert -L https://github.com/FiloSottile/mkcert/releases/download/v1.4.4/mkcert-v1.4.4-linux-amd64 && chmod +x mkcert && ./mkcert -install"
 }

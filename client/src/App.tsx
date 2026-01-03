@@ -1,14 +1,15 @@
 import { List, ListItem, ListItemText } from "@mui/material";
 import Typography from "@mui/material/Typography/Typography";
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 function App() {
   const [activities, setActivities] = useState<Activity[]>([]);
 
   useEffect(() => {
-    fetch("https://localhost:5002/api/activities")
-      .then((response) => response.json())
-      .then((data) => setActivities(data));
+    axios.get<Activity[]>("https://localhost:5002/api/activities").then((response) => {
+      setActivities(response.data);
+    });
   }, []);
 
   return (
